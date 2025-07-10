@@ -61,6 +61,29 @@ Additional **keystroke-based features** (e.g., dwell time, flight time, typing s
 6. Run the Streamlit App and expose it
 
 ---
+
+## 📷 App Preview
+
+Here are some snapshots of the web application in action:
+
+<p align="center">
+  <img src="img1.png" width="400" alt="Home Page"/>
+  <img src="img2.png" width="400" alt="Input Form"/>
+</p>
+<p align="center">
+  <img src="img3.png" width="400" alt="Model Output"/>
+  <img src="img4.png" width="400" alt="Probability Score"/>
+</p>
+<p align="center">
+  <img src="img5.png" width="400" alt="SHAP Summary"/>
+  <img src="img6.png" width="400" alt="Confusion Matrix"/>
+</p>
+<p align="center">
+  <img src="img7.png" width="400" alt="PR-AUC Curve"/>
+  <img src="img8.png" width="400" alt="ROC Curve"/>
+</p>
+
+---
 ## 📜 License
 
 This project is licensed under a custom "All Rights Reserved" license by ADWAITA PATANE.
