@@ -47,7 +47,7 @@ class KeystrokeLogger:
         df = pd.DataFrame(self.keystrokes)
         df.to_csv("keystroke_data.csv", index=False)
 
-        # Compute features
+        
         dwell_times = df['dwell_time']
         total_time = df['release_time'].iloc[-1] - self.start_time
         num_chars = len(df)
@@ -66,10 +66,10 @@ class KeystrokeLogger:
         }
 
         pd.DataFrame([features]).to_csv("keystroke_features.csv", index=False)
-        print("✅ Keystroke features saved to keystroke_features.csv")
+        print("Keystroke features saved to keystroke_features.csv")
         self.master.quit()
 
-# Run the app
+
 if __name__ == "__main__":
     root = tk.Tk()
     app = KeystrokeLogger(root)
