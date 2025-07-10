@@ -7,8 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1y2ReiQh2B2adKG0pl260EgK3Gaxbvt3u
 """
 
-
-!pip install streamlit shap scikit-learn matplotlib seaborn xgboost pyngrok --quiet
+!pip install streamlit shap scikit-learn catboost matplotlib seaborn xgboost pyngrok --quiet
 
 
 app_code = """
@@ -53,9 +52,15 @@ def add_typing_features(df):
     df['key_press_variance'] = np.random.uniform(50, 150, len(df))
     return df
 
+import re
+
 data = add_typing_features(data)
 X = data.drop('status', axis=1)
 y = data['status']
+
+# Sanitize column names 
+X.columns = [re.sub(r'\W|^(?=\d)', '_', col) for col in X.columns]
+
 
 # Define models
 xgb_clf = xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss')
@@ -162,11 +167,11 @@ with open("parkinsons_multimodal_research_app.py", "w") as f:
 from pyngrok import ngrok
 
 # Set your ngrok auth token here (replace below with your actual token)
-ngrok.set_auth_token("ENTER YOUR NGROK_AUTH_TOKEN HERE")
+ngrok.set_auth_token("2xjQUlQZVs0Vgd3qLmdrJI476Qd_7WNV6gzm6UauwTWR46Sw9")
 
 # Open tunnel to streamlit port 8501
 public_url = ngrok.connect(8501)
-print(f"✅ Streamlit app should be live at: {public_url}")
+print(f"Streamlit app should be live at: {public_url}")
 
 
 
