@@ -167,7 +167,7 @@ with open("parkinsons_multimodal_research_app.py", "w") as f:
 from pyngrok import ngrok
 
 # Set your ngrok auth token here (replace below with your actual token)
-ngrok.set_auth_token("2xjQUlQZVs0Vgd3qLmdrJI476Qd_7WNV6gzm6UauwTWR46Sw9")
+ngrok.set_auth_token("Enter your ngrok token")
 
 # Open tunnel to streamlit port 8501
 public_url = ngrok.connect(8501)
